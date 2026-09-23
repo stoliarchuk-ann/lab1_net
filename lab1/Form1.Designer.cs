@@ -52,6 +52,7 @@
             масивиToolStripMenuItem = new ToolStripMenuItem();
             одновимірніМасивиToolStripMenuItem = new ToolStripMenuItem();
             двовимірніМасивиToolStripMenuItem = new ToolStripMenuItem();
+            unitTestToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -208,7 +209,7 @@
             // 
             // масивиToolStripMenuItem
             // 
-            масивиToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { одновимірніМасивиToolStripMenuItem, двовимірніМасивиToolStripMenuItem });
+            масивиToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { одновимірніМасивиToolStripMenuItem, двовимірніМасивиToolStripMenuItem, unitTestToolStripMenuItem });
             масивиToolStripMenuItem.Name = "масивиToolStripMenuItem";
             масивиToolStripMenuItem.Size = new Size(77, 24);
             масивиToolStripMenuItem.Text = "Масиви";
@@ -226,6 +227,13 @@
             двовимірніМасивиToolStripMenuItem.Size = new Size(239, 26);
             двовимірніМасивиToolStripMenuItem.Text = "Двовимірні масиви";
             двовимірніМасивиToolStripMenuItem.Click += двовимірніМасивиToolStripMenuItem_Click;
+            // 
+            // unitTestToolStripMenuItem
+            // 
+            unitTestToolStripMenuItem.Name = "unitTestToolStripMenuItem";
+            unitTestToolStripMenuItem.Size = new Size(239, 26);
+            unitTestToolStripMenuItem.Text = "Unit test";
+            unitTestToolStripMenuItem.Click += unitTestToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -279,5 +287,6 @@
         private ToolStripMenuItem масивиToolStripMenuItem;
         private ToolStripMenuItem одновимірніМасивиToolStripMenuItem;
         private ToolStripMenuItem двовимірніМасивиToolStripMenuItem;
+        private ToolStripMenuItem unitTestToolStripMenuItem;
     }
 }

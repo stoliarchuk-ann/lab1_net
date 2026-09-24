@@ -12,6 +12,11 @@ namespace lab1
         private int[] temperatures;
         private int size = 10;
 
+        public int length
+        {
+            get { return size; }
+        }
+
         public arrays()
         {
             temperatures = new int[size];

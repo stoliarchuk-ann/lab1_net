@@ -19,30 +19,33 @@ namespace lab1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            dataGridView1.Columns.Clear();
-
-            arrays2d myMatrix = new arrays2d();
-
-            for (int i = 0; i < 5; i++)
+            try
             {
-                dataGridView1.Columns.Add("col" + i, i.ToString());
-                dataGridView1.Columns[i].Width = 40;
-            }
+                int n = Convert.ToInt32(textBox1.Text);
+                arrays2d myMatrix = new arrays2d(n);
+                dataGridView1.Columns.Clear();
+                dataGridView1.Rows.Clear();
+                dataGridView1.AllowUserToAddRows = false;
+                dataGridView1.ColumnCount = myMatrix.length;
+                dataGridView1.RowCount = myMatrix.length;
 
-            dataGridView1.RowCount = 5;
-            for (int i = 0; i < 5; i++)
-            {
-                for (int j = 0; j < 5; j++)
+                for (int i = 0; i < myMatrix.length; i++)
                 {
-                    dataGridView1.Rows[i].Cells[j].Value = myMatrix[i, j].ToString();
+                    dataGridView1.Columns[i].HeaderText = (i + 1).ToString();
+                    dataGridView1.Rows[i].HeaderCell.Value = (i + 1).ToString();
+                    for (int j = 0; j < myMatrix.length; j++)
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = myMatrix[i, j];
+                    }
                 }
+                int sum = myMatrix.calculateSumAboveMainDiagonal();
+                label1.Text = "Сума над головною діагоналлю: " + sum.ToString();
             }
-
-            int sum = myMatrix.calculateSumAboveMainDiagobal();
-            label1.Text = "Сума елементів вище діагоналі: " + sum.ToString();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Помилка вводу: " + ex.Message);
+            }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Form form = Application.OpenForms[0];

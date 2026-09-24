@@ -138,7 +138,7 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { x, y });
-            dataGridView1.Location = new Point(12, 110);
+            dataGridView1.Location = new Point(12, 118);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(300, 328);
@@ -162,7 +162,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(343, 87);
+            label2.Location = new Point(343, 93);
             label2.Name = "label2";
             label2.Size = new Size(84, 20);
             label2.TabIndex = 14;
@@ -175,7 +175,7 @@
             legend1.Enabled = false;
             legend1.Name = "Legend1";
             chart1.Legends.Add(legend1);
-            chart1.Location = new Point(318, 110);
+            chart1.Location = new Point(318, 118);
             chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -239,7 +239,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 458);
             Controls.Add(pictureBox2);
             Controls.Add(chart1);
             Controls.Add(label2);

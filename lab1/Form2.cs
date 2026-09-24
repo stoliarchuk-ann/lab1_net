@@ -24,19 +24,26 @@ namespace lab1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            dataGridView1.ColumnCount = 1;
-            dataGridView1.Columns[0].HeaderText = "Температура";
-
-            arrays myArr = new arrays(10);
-
-            for (int i = 0; i < 10; i++)
+            try
             {
-                dataGridView1.Rows.Add(myArr[i].ToString());
-            }
+                int n = Convert.ToInt32(textBox1.Text);
+                arrays myArr = new arrays(n);
+                dataGridView1.RowCount = myArr.length;
+                dataGridView1.ColumnCount = 1;
+                dataGridView1.Columns[0].HeaderText = "Температура";
 
-            int warmDays = myArr.countWarmDays();
-            label1.Text = "Придатних для купання днів: " + warmDays.ToString();
+                for (int i = 0; i < myArr.length; i++)
+                {
+                    dataGridView1.Rows[i].Cells[0].Value = myArr[i];
+                    dataGridView1.Rows[i].HeaderCell.Value = (i + 1).ToString();
+                }
+                int warmDays = myArr.countWarmDays();
+                label1.Text = "Придатних для купання днів: " + warmDays.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Помилка вводу: " + ex.Message);
+            }
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -48,6 +55,11 @@ namespace lab1
             Form form = Application.OpenForms[0];
             form.Show();
             this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

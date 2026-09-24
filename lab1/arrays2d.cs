@@ -13,8 +13,27 @@ namespace lab1
         private int[,] matrix;
         private int size = 5;
 
+        public int length
+        {
+            get { return size; }
+        }
+
         public arrays2d()
         {
+            matrix = new int[size, size];
+            Random rand = new Random();
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    matrix[i, j] = rand.Next(-10, 11);
+                }
+            }
+        }
+
+        public arrays2d(int customSize)
+        {
+            size = customSize;
             matrix = new int[size, size];
             Random rand = new Random();
             for (int i = 0; i < size; i++)
@@ -47,7 +66,7 @@ namespace lab1
             }
         }
 
-        public int calculateSumAboveMainDiagobal()
+        public int calculateSumAboveMainDiagonal()
         {
             int sum = 0;
             for (int i = 0; i < size; i++)
